@@ -21,9 +21,9 @@ const fs = require('fs/promises');
 
 // TODO: Create an array of questions for user input
 // title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-const questions = ["What was your motivation?", "Why did you build this project?", "What problem does it solve?", "What did you learn?"];
+// const questions = ["What was your motivation?", "Why did you build this project?", "What problem does it solve?", "What did you learn?"];
 
-const questions2 = [
+const questions = [
     {
         type: 'input',
         message: 'What is the title of your project?',
@@ -46,7 +46,7 @@ const questions2 = [
     },
     {
         type: 'input',
-        message: 'Please provide us with a screenshot to demonstrate usage using ![alt text](assets/images/screenshot.png) this format.',
+        message: 'Please provide us with a link to a screenshot',
         name: 'screenshot'
     },
     {
@@ -67,17 +67,17 @@ const questions2 = [
     {
         type: 'list',
         message: 'Please select a license for you README.md',
-        choices: [],
+        choices: ['MIT', 'EPL 1.0', 'Apache 2.0'],
         name: 'license'
     },
     {   
         type: 'input',
-        message: 'Please supply us with your github profile link following this format [Link text Here](https://link-url-here.org)',
+        message: 'Please supply us with your github profile link!',
         name: 'gitLink'
     },
     {
         type: 'input',
-        message: 'Please supply a link to your linked in profile using this format [Link text Here](https://link-url-here.org)',
+        message: 'Please supply a link to your linked in profile!',
         name: 'linkedinLink'
     }
 ]
@@ -87,39 +87,14 @@ const questions2 = [
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
+const handleResponse = (response) => {
+    console.log(response)
+}
 
 function init() {
     inquirer
-  .prompt([
-    {
-      type: 'input',
-      message: 'What is your name?',
-      name: 'name',
-    },
-    {
-      type: 'input',
-      message: 'Where are you from?',
-      name: 'location',
-    },
-    {
-      type: 'input',
-      message: 'Tell us a little about you!',
-      name: 'bio',
-    },
-    {
-        type: 'input',
-        message: 'What is your linkedin URL?',
-        name: 'linkedinurl',
-      },
-      {
-        type: 'input',
-        message: 'What is your github URL?',
-        name: 'githuburl',
-      },
-  ])
-  .then((response) =>
-  fs.writeFile('samplereadme.md', JSON.stringify(response)))
-//   console.log(response))
+  .prompt(questions)
+  .then(handleResponse)
 }
 
 // Function call to initialize app
