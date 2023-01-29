@@ -1,7 +1,8 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-
 const fs = require('fs/promises');
+const { generateReadme } = require('./generator')
+
 
 // GIVEN a command-line application that accepts user input
 // WHEN I am prompted for information about my application repository
@@ -22,7 +23,6 @@ const fs = require('fs/promises');
 // TODO: Create an array of questions for user input
 // title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 // const questions = ["What was your motivation?", "Why did you build this project?", "What problem does it solve?", "What did you learn?"];
-
 const questions = [
     {
         type: 'input',
@@ -82,13 +82,17 @@ const questions = [
     }
 ]
 // TODO: Create a function to write README file
-////////////////TABLE OF CONTENTS HAS TO BE INSERTED SEPERATELY
-
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 const handleResponse = (response) => {
-    console.log(response)
+    // console.log(response)
+    // responseArr.push(response)
+    const sampleReadme = generateReadme(response);
+    fs.writeFile('sampleReadme.md', sampleReadme, 'utf-8')
+    .then(() => console.log('file made'))
+   .catch(err => console.log `Error: ${err}`) 
+
 }
 
 function init() {
@@ -99,3 +103,6 @@ function init() {
 
 // Function call to initialize app
 init();
+
+
+
