@@ -46,28 +46,15 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Please provide us with a link to a screenshot',
-        name: 'screenshot'
-    },
-    {
-        type:'confirm',
-        message: 'Were there any contributors?',
-        name: 'confirmContrib'
-    },
-    {
-        type: 'input',
-        message: 'Please list all contributors.',
-        name: 'listContrib'
-    },
-    {
-        type: 'input',
         message: 'Please tell us a way of testing your program!',
         name: 'testing'
     },
     {
         type: 'list',
         message: 'Please select a license for you README.md',
-        choices: ['MIT', 'EPL 1.0', 'Apache 2.0'],
+        choices: ['[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+        '[![License: Apache_2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
+        '[![License: EPL-1.0](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'],
         name: 'license'
     },
     {   
@@ -81,14 +68,10 @@ const questions = [
         name: 'linkedinLink'
     }
 ]
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
 const handleResponse = (response) => {
-    // console.log(response)
-    // responseArr.push(response)
     const sampleReadme = generateReadme(response);
+    console.log(generateReadme);
     fs.writeFile('sampleReadme.md', sampleReadme, 'utf-8')
     .then(() => console.log('file made'))
    .catch(err => console.log `Error: ${err}`) 
