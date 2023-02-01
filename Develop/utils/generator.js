@@ -9,11 +9,12 @@ ${response.description}
 
 ${response.license}
 
+Click the badge above for more information on this license!
+
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [Contributing](#contributing)
 - [Testing](#testing)
 - [Questions](#questions)
@@ -37,8 +38,8 @@ ${response.testing}
 
 ## Questions
 
-[Click here for my Github!](${response.gitlink})
-[Click here for my LinkedIn!](${response.linkedinLink})
+* [Click here for my Github!](${response.gitlink})
+* [Click here to email me with any additional questions!](mailto:${response.email})
 `
 }
 

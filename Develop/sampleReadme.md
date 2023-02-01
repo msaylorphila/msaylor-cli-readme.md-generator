@@ -1,18 +1,19 @@
-# cli readme.md generator
+# This is a sample title
 
 ## Description
 
-This program will help a user to generate a readme.md profile in markdown syntax using best practice for a readme file
+This is a sample description
 
 ## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache_2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Click the badge above for more information on this license!
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [Contributing](#contributing)
 - [Testing](#testing)
 - [Questions](#questions)
@@ -20,11 +21,11 @@ This program will help a user to generate a readme.md profile in markdown syntax
 
 ## Installation
 
-n/a
+This is a sample installation process
 
 ## Usage
 
-To use this app you would open the target index.js file in node and inquirer would immediately start prompting you with questions
+These are sample usage instructions
 
 ## Contributing
 
@@ -32,9 +33,9 @@ For a guide on how to contribute please refer to the [Contributor Covenant](http
 
 ## Testing
 
-n/a
+This is a sample testing section
 
 ## Questions
 
-[Click here for my Github!](undefined)
-[Click here for my LinkedIn!](linkedin.com)
+* [Click here for my Github!](undefined)
+* [Click here to email me with any additional questions!](mailto:email.com)
