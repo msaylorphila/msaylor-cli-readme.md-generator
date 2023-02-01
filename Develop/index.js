@@ -1,7 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs/promises');
 const { generateReadme } = require('./utils/generator')
-
+///above is the import of the generateReadme code
+///these are the questions that are fed to inquirer
 const questions = [
     {
         type: 'input',
@@ -47,10 +48,10 @@ const questions = [
         name: 'email'
     }
 ]
-
+///this code takes the user response from inquirer and feeds the generateReadme function
+///it then writes the file 'samplereadme.md' and uses the data from said function
 const handleResponse = (response) => {
     const sampleReadme = generateReadme(response);
-    console.log(generateReadme);
     fs.writeFile('sampleReadme.md', sampleReadme, 'utf-8')
     .then(() => console.log('file made'))
    .catch(err => console.log `Error: ${err}`) 

@@ -1,3 +1,5 @@
+///This uses template literals to insert user responses into the sample readme. This generate code was exported to the index.js file
+
 const generateReadme = (response) => {
 return `# ${response.title}
 
